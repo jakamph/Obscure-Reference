@@ -34,14 +34,14 @@ class Database_Interaction:
       self._database_sheet = None
 
       #get the list of spreadsheets
-      self._spreadsheet_list = self.client.GetSpreadsheetsFeed()
+      self._spreadsheet_list = self._client.GetSpreadsheetsFeed()
       self._key = -1
       
       #make sure we got a list
       if self._spreadsheet_list <> None:
           for sheet in self._spreadsheet_list.entry:
               
-              if database_name == sheet._title.text:
+              if database_name == sheet.title.text:
                   
                   self._database_sheet = sheet
                   path_parts = sheet.id.text.split( '/' )
@@ -62,7 +62,28 @@ class Database_Interaction:
       if None <> table_name:
 
          #retrieve the table from the spreadsheet
+         self._worksheet_list = self._client.GetWorksheetsFeed(self._key)
+         if self._worksheet_list <> None:
+            _wksht_id = ''
 
+            for worksheet in self._worksheet_list.entry:
+                 
+                 if table_name == worksheet.title.text:
+                     
+                     path_parts = worksheet.id.text.split( '/' )
+                     _wksht_id = path_parts[len(path_parts) - 1]
+
+                     #add to local table of already found worksheets?
+
+                  #end if database name matches
+
+            #end loop through the database list
+                     
+            if _wksht_id == ''
+            #no table match found  
+
+         #end if we got a spreadsheet list      
+      
       #end if valid table_name
 
    #end Get_Table
