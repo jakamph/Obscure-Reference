@@ -13,6 +13,9 @@
 #include <QString>
 #include <QTimer>
 
+namespace Obscure_Reference
+{
+
 /** This class provides an abstraction of the interface to the Google
   * Spreadsheet.
   */
@@ -48,5 +51,7 @@ private:
      */
    QTimer* m_logInTimer;
 };
+
+} /* end namespace Obscure_Reference */
 
 #endif // SPREADSHEET_INTERFACE_HPP

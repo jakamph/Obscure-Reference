@@ -10,6 +10,8 @@
 #include "database_interface.hpp"
 #include "spreadsheet_interface.hpp"
 
+using namespace Obscure_Reference;
+
 /* Please see the header for information about this function */
 DatabaseInterface::DatabaseInterface()
 {

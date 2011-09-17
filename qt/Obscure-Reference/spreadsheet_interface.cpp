@@ -11,6 +11,8 @@
 #include <QString>
 #include "spreadsheet_interface.hpp"
 
+using namespace Obscure_Reference;
+
 /* See the header for information on this function. */
 SpreadsheetInterface::SpreadsheetInterface()
 {

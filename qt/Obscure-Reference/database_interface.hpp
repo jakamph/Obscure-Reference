@@ -14,6 +14,9 @@
 #ifndef DATABASE_INTERFACE_HPP
 #define DATABASE_INTERFACE_HPP
 
+namespace Obscure_Reference
+{
+
 /** This class will provide access to the player/team database. */
 class DatabaseInterface
 {
@@ -51,5 +54,7 @@ private:
    /** This is the interface to the spreadsheet with which we communicate */
    SpreadsheetInterface* m_spreadsheetInterface;
 };
+
+} /* end namespace Obscure_Reference */
 
 #endif // DATABASE_INTERFACE_HPP

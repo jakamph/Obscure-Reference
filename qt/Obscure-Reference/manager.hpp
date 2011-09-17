@@ -9,6 +9,9 @@
 #ifndef MANAGER_HPP
 #define MANAGER_HPP
 
+namespace Obscure_Reference
+{
+
 /** This class is used to store information pretaining to an individual
   * manager.
   */
@@ -22,5 +25,7 @@ public:
      */
    Manager();
 };
+
+} /* end namespace Obscure_Reference */
 
 #endif // MANAGER_HPP
