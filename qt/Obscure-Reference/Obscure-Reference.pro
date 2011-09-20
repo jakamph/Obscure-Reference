@@ -25,6 +25,6 @@ HEADERS  += \
     player.hpp \
     team.hpp \
     manager.hpp \
-    or_common_defines.hpp
+    or_system_util.hpp
 
 FORMS    += or_main_window.ui

@@ -9,7 +9,7 @@
 
 #include <QString>
 
-#include "or_common_defines.hpp"
+#include "or_system_util.hpp"
 
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
@@ -43,6 +43,13 @@ public:
    Player( QString  name,
            PlayerId id );
 
+   /** This is the destructor of the player class.
+     *
+     * @post All objects created for this object are destroyed.
+     *
+     */
+   ~Player( );
+
    /** This method will return the name of the player in the format of
      * "Firstname Lastname [team]"
      *
@@ -69,6 +76,33 @@ public:
    int
    getBaseSalary( int year = -1 );
 
+   /** This function is used to receive the utility object that is used
+     * to provide various functionality to multiple objects.
+     *
+     * @param orUtility  The utility object to be used.
+     *
+     */
+   void
+   setOrUtility( ORSystemUtil*  orUtility );
+
+   /** This function is used to retrieve the year in which this player
+     * was last drafted.
+     *
+     * @return The full four-digit year in which this player was last drafted.
+     *
+     */
+   int
+   getDraftYear( void );
+
+   /** This function is used to retrieve the current salary for this
+     * player.
+     *
+     * @return The current salary for this player.
+     *
+     */
+   int
+   getCurrentSalary( void );
+
 private:
    /** The name of this player in the format "Firstname Lastname" */
    QString m_name;
@@ -81,6 +115,9 @@ private:
 
    /** The last year that this player was drafted */
    int m_draftYear;
+
+   /** The utility object that is to be used */
+   ORSystemUtil*  m_orUtility;
 };
 
 } /* end namespace Obscure_Reference */
