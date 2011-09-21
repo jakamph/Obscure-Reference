@@ -52,7 +52,7 @@ typedef enum Salary
 /** Mapping of a player's salary. Key is a year. Value is that year's
   * salary for the player.
   */
-typedef QMultiMap< int, Salary > PlayerSalary;
+typedef QMultiMap< int, int > PlayerSalary;
 
 
 class ORSystemUtil

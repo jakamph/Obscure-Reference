@@ -51,7 +51,7 @@ Player::getBaseSalary( int year )
    int internalYear = year;
 
    /* default our salary to invalid */
-   Salary returnSalary = invalidSalary;
+   int returnSalary = invalidSalary;
 
    /* if year is invalid */
    if (invalidYear == internalYear)
