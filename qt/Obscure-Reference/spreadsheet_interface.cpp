@@ -28,3 +28,10 @@ SpreadsheetInterface::userLogIn( QString username,
    return successfulLogIn;
 
 }/* ::userLogIn */
+
+/* See the header for information on this function. */
+int
+SpreadsheetInterface::getCurrentSeason( void )
+{
+   return 2011;
+}/* end ::getCurrentSeason */

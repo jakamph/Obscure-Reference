@@ -69,6 +69,8 @@ public:
    inline int
    getCurrentSeason( void ){ return m_currentSeason; }
 
+   void
+   setCurrentSeason( int season );
 private:
 
    /** This is a purposely application-level variable to ensure that we're

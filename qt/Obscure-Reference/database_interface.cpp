@@ -39,3 +39,11 @@ DatabaseInterface::userLogIn( QString username,
    return successfulLogIn;
 
 }/* end ::userLogIn */
+
+
+/* Please see the header for information about this function */
+int
+DatabaseInterface::getCurrentSeason( void )
+{
+   return m_spreadsheetInterface->getCurrentSeason();
+}/* end ::getCurrentSeason */

@@ -50,6 +50,14 @@ public:
    userLogIn( QString username,
               QString password );
 
+   /**
+     * This method will retrieve the current football season.
+     *
+     * @return Tthe current season's year.
+     *
+     */
+   int
+   getCurrentSeason( void );
 private:
    /** This is the interface to the spreadsheet with which we communicate */
    SpreadsheetInterface* m_spreadsheetInterface;

@@ -44,6 +44,14 @@ public:
    bool
    userLogIn( QString username,
               QString password );
+   /**
+     * This method will retrieve the current football season.
+     *
+     * @return Tthe current season's year.
+     *
+     */
+   int
+   getCurrentSeason( void );
 
 private:
    /** Timer that will be set to execute when the log in token that we

@@ -8,41 +8,36 @@
   */
 
 #include <QString>
+#include <QObject>
 
 #include "or_system_util.hpp"
+#include "database_object.hpp"
 #include "player.hpp"
 
 using namespace Obscure_Reference;
 
 /* See the header file for information on using this method */
-Player::Player( ) :
-   m_name( ),
-   m_id( invalidPlayerId ),
-   m_orUtility( NULL )
+Player::Player( QObject* parent ) :
+   DatabaseObject( invalidPlayerId,
+                   QString::null,
+                   parent ),
+   m_orUtility( 0 )
 {
 }/* end ::Player */
 
 /* See the header file for information on using this method */
 Player::Player( QString  name,
-                PlayerId id ) :
-   m_name( name ),
-   m_id( id )
+                int      id,
+                QObject* parent ) :
+   DatabaseObject( id, name, parent )
 {
 }/* end ::Player name & ID */
 
 /* See the header file for information on using this method */
-QString
-Player::getName()
+Player::~Player()
 {
-   return m_name;
-}/* end getName */
 
-/* See the header file for information on using this method */
-PlayerId
-Player::getId( )
-{
-   return m_id;
-}/* end getId */
+}/* end ::~Player */
 
 /* See the header file for information on using this method */
 int

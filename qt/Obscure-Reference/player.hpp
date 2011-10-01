@@ -10,6 +10,7 @@
 #include <QString>
 
 #include "or_system_util.hpp"
+#include "database_object.hpp"
 
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
@@ -20,8 +21,9 @@ namespace Obscure_Reference
 /** This class contains all of the data necessary to interface with a
   * player.
   */
-class Player
+class Player : public DatabaseObject
 {
+   Q_OBJECT
 public:
 
    /** This is the constructor for the Player class
@@ -29,7 +31,7 @@ public:
      * @post A new isntance of the Player class has been created.
      *
      */
-   Player( );
+   explicit Player( QObject* parent = 0 );
 
    /** This is the constructor for the Player class
      *
@@ -40,8 +42,9 @@ public:
      * @post A new isntance of the Player class has been created.
      *
      */
-   Player( QString  name,
-           PlayerId id );
+   explicit Player( QString  name,
+                    int      id,
+                    QObject* parent = 0 );
 
    /** This is the destructor of the player class.
      *
@@ -50,21 +53,6 @@ public:
      */
    ~Player( );
 
-   /** This method will return the name of the player in the format of
-     * "Firstname Lastname [team]"
-     *
-     * @return A QString with this player's name.
-     */
-   QString
-   getName( void );
-
-   /** This method will return the ID of this player.
-     *
-     * @return The PlayerId associated with this player.
-     *
-     */
-   PlayerId
-   getId( );
 
    /** This method will retrieve the player's salary for the specified
      * year if the player were drafted in that year. If no year is specified,
@@ -104,11 +92,6 @@ public:
    getCurrentSalary( void );
 
 private:
-   /** The name of this player in the format "Firstname Lastname" */
-   QString m_name;
-
-   /** The ID that the database has for this player. */
-   PlayerId m_id;
 
    /** The Mapping of the salaries for this player */
    PlayerSalary m_salary;

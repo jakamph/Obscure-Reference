@@ -13,11 +13,19 @@
 #define OR_MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <QMap>
+
+#include "or_system_util.hpp"
+#include "database_interface.hpp"
+#include "team.hpp"
+
 
 namespace Ui
 {
    class ORMainWindow;
 }
+
+using namespace Obscure_Reference;
 
 /**
   * This class is the main window of the application.
@@ -46,10 +54,29 @@ public:
      */
    ~ORMainWindow();
 
+private slots:
+
+   /**
+     * This slot is called when the exit menu option is selected.
+     *
+     * @post The main window has been closed.
+     *
+     */
+   void on_actionExit_triggered();
+
 private:
 
    /** The generated UI */
    Ui::ORMainWindow* ui;
+
+   /** The utility object */
+   ORSystemUtil* m_systemUtil;
+
+   /** The list of teams */
+   QMap<int, Team*> m_teamMap;
+
+   /** The interface to the database */
+   DatabaseInterface* m_databaseInterface;
 };
 
 #endif // OR_MAIN_WINDOW_H
